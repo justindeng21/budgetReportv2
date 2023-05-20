@@ -22,9 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "git add . & git commit -m \"auto deploy\" & git push origin master",
-    "forceDeploy":"git add . & git commit -m \"auto deploy\" & git push origin master --force"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
