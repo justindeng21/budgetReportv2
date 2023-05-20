@@ -45,8 +45,8 @@ class LoginForm extends Component<{},loginState>{
 
         }).then((res)=>{
             if(res['status'] === 204){
-                this.setState({username: '',password:''});
-                window.location.href  = '/reportingtool';
+                //this.setState({username: '',password:''});
+                //window.location.href  = '/reportingtool';
             }
         })
     }
