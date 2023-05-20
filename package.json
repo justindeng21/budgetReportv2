@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start":"node server.js",
-    "heroku-postbuild":"cd budgetReport & react-scripts build"
+    "heroku-postbuild":"cd budgetReport & npm install & react-scripts build",
+    "deploy":"git add . & git commit -m \"auto deply \" & git push origin master"
   },
   "keywords": [],
   "author": "",
