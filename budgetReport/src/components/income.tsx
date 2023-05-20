@@ -32,8 +32,8 @@ export default class IncomeForm extends Component<{},incomeState>{
     handleSubmit(event : any){
         var body = this.state
         fetch(domain + '/createReport', {
-
             method: 'POST', 
+            credentials: 'include',
             headers:{
                 'content-type':'application/json'
             },

@@ -35,10 +35,8 @@ class LoginForm extends Component<{},loginState>{
     handleSubmit(event : any) {
         var body = this.state
         fetch(domain + '/auth', {
-
             method: 'POST', 
             credentials: 'include',
-            redirect: 'follow',
             headers:{
                 'content-type':'application/json'
             },
