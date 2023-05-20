@@ -40,14 +40,14 @@ class LoginForm extends Component<{},loginState>{
             credentials: 'include',
             redirect: 'follow',
             headers:{
-                'content-type':'application/json',
-                "Access-Control-Allow-Origin": "https://budgetreportapi.herokuapp.com"
+                'content-type':'application/json'
             },
             body: JSON.stringify(body)
 
         }).then((res)=>{
             if(res['status'] === 204){
                 this.setState({username: '',password:''});
+                window.location.replace("/reportingtool");
             }
         })
     }
