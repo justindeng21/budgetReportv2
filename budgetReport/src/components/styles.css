@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+}
+  
+
+
+.form{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+
+.basic-input{
+    height: 5vh;
+    width: 100%;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #262626;
+    caret-shape: block;
+    caret-color: white;
+    font-size: 20px;
+    color: #C9C9C9;
+}
+
+.temp{
+    display: flex;
+}
+
+
+
+
+
+.submit{
+    width: 50%;
+    border-radius: 10px;
+    background: #262626;
+    border-color: #262626;
+    color:#C9C9C9;
+    border-style: solid;
+    margin: auto;
+}
+
+
+
+
+.reportingTool{
+    display: inline-grid;
+    grid-column-start: auto;
+    
+}
+
+
+.heading {
+    align-items:center;
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.expenseContainer{
+    background-color: #005F6B;
+    border: 1px solid #C9C9C9;
+    height: 60vh;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 10vh 10vh auto
+}
+
+
+.loginContainer{
+    background-color: #005F6B;
+    border: 1px solid #C9C9C9;
+    height: 30vh;
+    width: 20vw;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: auto
+}
+
+.budgetReportContainer{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-start: 3;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+
+
+.expenseReportContainer{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-start: 5;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.footer{
+    align-items:center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 7;
+}
+
+.expenseField{
+    font-size: 1vw;
+}
+
+.reportField{
+    font-size: 1vw;
+}
+
+.expenseRow:hover{
+    font-size: 1vw;
+    background-color: gray
+}
+
+.reportRow:hover{
+    font-size: 1vw;
+    background-color: gray
+}
+
+.postCallHeading{
+    font-size: 80%;
+    height: 1vh;
+}
+
+table, th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+    color: #C9C9C9;
+}
+
+tr, td {
+    padding: 10px;
+    text-align: left;
+
+}
+tr:nth-child(even) {background-color: #005F6B;}
+tr:nth-child(odd) {background-color: #262626;}
+
+
+
+
+.App-logo {
+    height: 10vmin;
+    pointer-events: none;
+    
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+
+.App {
+text-align: center;
+background-color: #1B1B1B;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+font-size: calc(10px + 2vmin);
+color: #C9C9C9;
+}
+  
+.loginSubmit{
+    width: 50%;
+    height: 20%;
+    border-radius: 10px;
+    background: #262626;
+    border-color: #262626;
+    color:#C9C9C9;
+    border-style: solid;
+    margin: auto;
+}
+  

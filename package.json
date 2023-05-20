@@ -1,0 +1,17 @@
+{
+  "name": "budgetreportv2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "proxy": "https://budgetreportapi.herokuapp.com/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"cd budgetReport & npm run build & cd ../ & node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
