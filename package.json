@@ -6,7 +6,7 @@
   "proxy": "https://budgetreportapi.herokuapp.com/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"cd budgetReport & npm run build & cd ../ & node server.js"
+    "start":"cd budgetReport & npm run build & cd ../ & node server.js"
   },
   "keywords": [],
   "author": "",
