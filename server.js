@@ -3,7 +3,7 @@ const app = express();
 
 
 
-app.use(express.static('budgetreport/build'));
+app.use(express.static('/budgetreport/build'));
 
 
 
