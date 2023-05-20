@@ -32,8 +32,8 @@ export default class ExpenseForm extends Component<{},expenseState>{
             var body = this.state
             console.log(body)
             fetch(domain + '/createTransaction', {
-
-                method: 'POST', 
+                method: 'POST',
+                credentials: 'include', 
                 headers:{
                     'content-type':'application/json'
                 },
