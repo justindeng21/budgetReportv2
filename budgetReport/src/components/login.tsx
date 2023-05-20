@@ -38,6 +38,7 @@ class LoginForm extends Component<{},loginState>{
 
             method: 'POST', 
             credentials: 'include',
+            redirect: 'follow',
             headers:{
                 'content-type':'application/json'
             },
@@ -45,8 +46,7 @@ class LoginForm extends Component<{},loginState>{
 
         }).then((res)=>{
             if(res['status'] === 204){
-                //this.setState({username: '',password:''});
-                //window.location.href  = '/reportingtool';
+                this.setState({username: '',password:''});
             }
         })
     }
