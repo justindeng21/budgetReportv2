@@ -41,7 +41,7 @@ class LoginForm extends Component<{},loginState>{
             redirect: 'follow',
             headers:{
                 'content-type':'application/json',
-                "Access-Control-Allow-Origin": "https://budgetreportv2.herokuapp.com"
+                "Access-Control-Allow-Origin": "https://budgetreportapi.herokuapp.com"
             },
             body: JSON.stringify(body)
 
