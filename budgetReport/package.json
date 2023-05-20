@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "budgetreport",
   "version": "0.1.0",
   "proxy": "https://budgetreportv2.herokuapp.com",
   "private": true,
