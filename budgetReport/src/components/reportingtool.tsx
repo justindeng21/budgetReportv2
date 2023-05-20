@@ -46,6 +46,10 @@ class ReportingTool extends Component<{},transactionData>{
 
     calcCurrentBalence(){
 
+        if(this.state.budgetReport[0].income === undefined){
+            return
+        }
+
         var balance = this.state.budgetReport[0].income
         for(var i = 0; i< this.state.data.length; i++){
             balance -= this.state.data[i].expense
