@@ -19,7 +19,7 @@ function Controller() {
         method: 'GET',
         credentials: 'include', 
     }).then((res)=>{
-        if(res['status'] === 204){
+        if(res['status'] === 200){
             return(
                 <ReportingToolPage></ReportingToolPage>
             )
