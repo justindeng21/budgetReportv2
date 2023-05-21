@@ -63,12 +63,13 @@ class ReportingTool extends Component<{},transactionData>{
             this.setState({budgetReport: res})
         }).then(()=>{
             this.getMonthlyTransactions().then(()=>{
-                if(this.state.budgetReport.length == 0){
-                    this.render()
-                    return
+                if(this.state.budgetReport.length != 0){
+                    this.calcCurrentBalence()
+
                 }
-                this.calcCurrentBalence()
+                
                 this.render()
+                this.setState({isReportGen:true})
             })
         })
         
