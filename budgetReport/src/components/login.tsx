@@ -52,12 +52,19 @@ class LoginForm extends Component<{},loginState>{
 
     render(): ReactNode {
         return(
+            <div>
+                <h1>Budget Tool</h1>
             <form onSubmit={(event) => event.preventDefault()} className='form'>
                 <h5 className='postCallHeading'>Login</h5>
                 <input type="text" className="basic-input" value = {this.state.username} placeholder='Username' onChange={this.handleUserNameChange}/>
                 <input type="password" className="basic-input" maxLength={50} value = {this.state.password} placeholder='Password' onChange={this.handlePasswordChange}/>
                 <button type='submit' className="loginSubmit" onClick={this.handleSubmit}>Login</button>
             </form>
+
+
+
+            </div>
+            
         )
     }
 }
