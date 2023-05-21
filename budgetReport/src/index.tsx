@@ -11,53 +11,24 @@ const domain = 'https://budgetreportapi.herokuapp.com'
 
 
 
-type ControllerState = {
-    validated : boolean,
-    validToken : boolean
-}
 
-class Controller extends Component<{},ControllerState> {
+function Controller() {
+    var path = window.location.pathname
+
+    if(path == '/reportingtool'){
+        return(
+            <ReportingToolPage></ReportingToolPage>
+        )
+    }
+
+    else{
+        return(
+            <LoginPage></LoginPage>
+        )
+    }
+
+
     
-
-
-    constructor(props:any){
-        super(props)
-        this.state = {validated:false,validToken:false}
-    }
-        
-    validateToken() {
-        fetch(domain + '/validateToken', {
-            method: 'GET',
-            credentials: 'include', 
-
-        }).then((res)=>{
-            if(res['status'] === 200){
-                this.setState({validated:true,validToken:true})
-            }
-            else{
-                this.setState({validated:true,validToken:false})
-            }
-        })
-    
-    }
-     
-   
-    render(): React.ReactNode {
-        if(this.state.validated === false)
-            return null;
-        
-        else if(this.state.validToken === true){
-            return(
-                <ReportingToolPage></ReportingToolPage>
-            )
-        }
-
-        else if(this.state.validToken === false){
-            return(
-                <LoginPage></LoginPage>
-            )
-        }
-    }
     
 }
 

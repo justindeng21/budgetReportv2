@@ -38,6 +38,17 @@ class ReportingTool extends Component<{},transactionData>{
 
     }
 
+    async validateToken(){
+        var response = await fetch(domain + '/validateToken',{
+            method: 'GET',
+            credentials: 'include'
+        }).then((res)=>{
+            if(res['status'] !== 200){
+                window.location.replace("/login");
+            }
+        })
+    }
+
     async getMonthlyTransactions(){
         var response = await fetch(domain + '/monthlyexpenses',{
             method: 'GET',
@@ -77,6 +88,9 @@ class ReportingTool extends Component<{},transactionData>{
     }
 
     async componentDidMount() {
+
+        await this.validateToken()
+
         await this.getBudgetReport()
     }
 
