@@ -24,7 +24,7 @@ const domain = 'https://budgetreportapi.herokuapp.com'
 interface transactionData {
     data: Array<any>
     budgetReport : Array<any>
-    currentBalence : number
+
     isReportGen : Boolean
 }
 
@@ -34,12 +34,15 @@ class ReportingTool extends Component<{},transactionData>{
     constructor(props:any) {
         super(props);
     
-        this.state = {data:[],budgetReport:[],currentBalence:0,isReportGen:false};
+        this.state = {data:[],budgetReport:[],isReportGen:false};
 
     }
 
     async getMonthlyTransactions(){
-        var response = await fetch(domain + '/monthlyexpenses');
+        var response = await fetch(domain + '/monthlyexpenses',{
+            method: 'GET',
+            credentials: 'include'
+        });
         var res = await response.json();
         this.setState({data: res})
     }
@@ -53,21 +56,18 @@ class ReportingTool extends Component<{},transactionData>{
             balance -= this.state.data[i].expense
         }
         
-        this.setState({currentBalence:balance})
-        this.setState({isReportGen:true})
+
     }
 
     async getBudgetReport(){
-        var response = await fetch(domain + '/budgetReport');
+        var response = await fetch(domain + '/budgetReport',{
+            method: 'GET',
+            credentials: 'include'
+        });
         await response.json().then((res)=>{
             this.setState({budgetReport: res})
         }).then(()=>{
             this.getMonthlyTransactions().then(()=>{
-                if(this.state.budgetReport.length != 0){
-                    this.calcCurrentBalence()
-
-                }
-                
                 this.render()
                 this.setState({isReportGen:true})
             })
@@ -119,7 +119,7 @@ class ReportingTool extends Component<{},transactionData>{
                             <tr key={data.id} className='reportRow'>
                                 <td className='reportField'>{data.reportDate.split('T')[0].split('-')[1]+'/'+data.reportDate.split('T')[0].split('-')[2]}</td>
                                 <td className='reportField'>{data.income}</td>
-                                <td className='reportField'>{this.state.currentBalence.toFixed(2)}</td>
+                                <td className='reportField'>N/A</td>
                             </tr>)}
                             </tbody>
                         </table>
