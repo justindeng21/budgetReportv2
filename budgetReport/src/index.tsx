@@ -6,22 +6,32 @@ import React from 'react';
 
 
 import ReactDOM from 'react-dom/client';
+const domain = 'https://budgetreportapi.herokuapp.com'
 
 
 function Controller() {
     const pathname = window.location.pathname
-    
-    if(pathname === '/reportingtool'){
-        return(
-            <ReportingToolPage></ReportingToolPage>
-        )
-    }
 
-    else{
-        return(
-            <LoginPage></LoginPage>
-        )
-    }
+
+
+        
+    fetch(domain + '/validateToken', {
+        method: 'GET',
+        credentials: 'include', 
+    }).then((res)=>{
+        if(res['status'] === 204){
+            return(
+                <ReportingToolPage></ReportingToolPage>
+            )
+        }
+    })  
+
+    return(
+        <LoginPage></LoginPage>
+    )
+    
+
+    
 }
 
 
