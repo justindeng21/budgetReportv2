@@ -66,8 +66,9 @@ export default class LoginPage extends Component{
     render(): ReactNode {
         return( 
             <div className="App">
+                <h1>Budget Tool</h1>
             <div className="loginContainer">
-                    <h1>Budget Tool</h1>
+                    
                     <LoginForm></LoginForm>
                 </div>
             </div>
