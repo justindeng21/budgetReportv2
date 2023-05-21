@@ -39,7 +39,7 @@ class ReportingTool extends Component<{},transactionData>{
     }
 
     async validateToken(){
-        var response = await fetch(domain + '/validateToken',{
+        await fetch(domain + '/validateToken',{
             method: 'GET',
             credentials: 'include'
         }).then((res)=>{
@@ -56,18 +56,6 @@ class ReportingTool extends Component<{},transactionData>{
         });
         var res = await response.json();
         this.setState({data: res})
-    }
-
-    calcCurrentBalence(){
-
-
-
-        var balance = this.state.budgetReport[0].income
-        for(var i = 0; i< this.state.data.length; i++){
-            balance -= this.state.data[i].expense
-        }
-        
-
     }
 
     async getBudgetReport(){
@@ -178,7 +166,7 @@ class ReportingTool extends Component<{},transactionData>{
                         top: 40,
                         right: 40,
                         left: 40,
-                        bottom: 5,
+                        bottom: 40,
                     }}
                     >
                     <CartesianGrid />
