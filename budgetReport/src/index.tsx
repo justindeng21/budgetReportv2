@@ -20,17 +20,18 @@ function Controller() {
         credentials: 'include', 
     }).then((res)=>{
         if(res['status'] === 200){
+            console.log('hi')
             return(
                 <ReportingToolPage></ReportingToolPage>
             )
         }
     })  
 
+
     return(
         <LoginPage></LoginPage>
     )
     
-
     
 }
 
