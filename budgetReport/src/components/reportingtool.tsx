@@ -5,7 +5,7 @@ import './styles.css'
 import logo from '../assets/logo.svg';
 
 import ExpenseForm from './expense'
-import IncomeForm from './income';
+import ImportForm from './import';
 
 import{
     LineChart,
@@ -80,6 +80,7 @@ class ReportingTool extends Component<{},transactionData>{
         await this.validateToken()
 
         await this.getBudgetReport()
+
     }
 
     render(): ReactNode {
@@ -96,7 +97,7 @@ class ReportingTool extends Component<{},transactionData>{
                     
                     <ExpenseForm></ExpenseForm>
 
-                    <IncomeForm></IncomeForm>
+                    <ImportForm></ImportForm>
                 </div>
 
             
