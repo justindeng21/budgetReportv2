@@ -174,7 +174,7 @@ class ReportingTool extends Component<{},transactionData>{
                     >
                     <CartesianGrid />
                     <YAxis tick={{ fill: 'white' }}/>
-                    <Line type="monotone" dataKey="expense" stroke="white"  strokeWidth={3}} />
+                    <Line type="monotone" dataKey="expense" stroke="white"  strokeWidth={3} />
                    
                     </LineChart>
                 </ResponsiveContainer>
