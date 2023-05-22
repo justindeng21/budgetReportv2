@@ -93,7 +93,7 @@ class ReportingTool extends Component<{},transactionData>{
         return(
 
 
-            <div className="temp">
+            <div className="apiContainer">
                 <div className="expenseContainer">
                 <h5 className='postCallHeading'>Api Calls</h5>
                     
@@ -111,20 +111,18 @@ class ReportingTool extends Component<{},transactionData>{
                     
 
                     <div className="budgetReportContainer">
-                    <h3>Budget Report</h3>
+                    <h3>Income Report</h3>
                         <table >
                             <tbody>
                             <tr>
-                                <td >Budget Date</td>
-                                <td >Budget</td>
-                                <td >Current Balence</td>
+                                <td >Report Date</td>
+                                <td >Income</td>
                             </tr>
 
                             {transactions.budgetReport.map(data => 
                             <tr key={data.id} className='reportRow'>
                                 <td className='reportField'>{data.reportDate.split('T')[0].split('-')[1]+'/'+data.reportDate.split('T')[0].split('-')[2]}</td>
                                 <td className='reportField'>{data.income}</td>
-                                <td className='reportField'>N/A</td>
                             </tr>)}
                             </tbody>
                         </table>

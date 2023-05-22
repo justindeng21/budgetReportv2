@@ -61,6 +61,10 @@ code {
     color: #C9C9C9;
 }
 
+.apiContainer{
+    display: flex;
+}
+
 
 
 
@@ -168,7 +172,7 @@ code {
 }
 
 .expenseFieldTrans{
-    font-size: 0.75vw;
+    font-size: 0.5vw;
 }
 
 .expenseFieldDesc{
@@ -213,7 +217,6 @@ tr, td {
     color:#C9C9C9;
     border-style: solid;
     margin: auto;
-    text-align: center;
 }
 tr:nth-child(even) {background-color: #005F6B;}
 tr:nth-child(odd) {background-color: #262626;}
