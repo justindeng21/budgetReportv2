@@ -60,7 +60,7 @@ export default class ImportForm extends Component<{},ImportState>{
                     body: JSON.stringify(payload)
     
                 }).then(()=>{
-                    window.location.reload();
+                    
                 })
             };
             
