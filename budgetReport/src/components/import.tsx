@@ -45,9 +45,9 @@ export default class ImportForm extends Component<{},ImportState>{
                 payload = []
                 for(var i = 0; i < csvRows.length; i++){
                     var obj = {
-                        '\'date\'':csvRows[i].split(',')[0],
-                        '\'value\'':csvRows[i].split(',')[1],
-                        '\'description\'':csvRows[i].split(',')[2]
+                        date:csvRows[i].split(',')[0],
+                        value:csvRows[i].split(',')[1],
+                        description:csvRows[i].split(',')[2]
                     }
                     payload.push(obj)
                 }
