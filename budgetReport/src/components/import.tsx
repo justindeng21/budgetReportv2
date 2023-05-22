@@ -57,7 +57,7 @@ export default class ImportForm extends Component<{},ImportState>{
                     headers:{
                         'content-type':'application/json'
                     },
-                    body: JSON.stringify(payload)
+                    body: JSON.stringify({data:payload})
     
                 }).then(()=>{
                     
