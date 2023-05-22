@@ -167,8 +167,12 @@ code {
     grid-row-end: 7;
 }
 
-.expenseField{
+.expenseFieldDate{
     font-size: 1vw;
+}
+
+.expenseFieldTrans{
+    font-size: 0.5vw;
 }
 
 .expenseFieldDesc{
