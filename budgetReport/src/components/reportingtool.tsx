@@ -143,7 +143,7 @@ class ReportingTool extends Component<{},transactionData>{
                             <tr key={data.id} className='expenseRow'>
                                 <td className='expenseField'>{data.transactionDate.split('T')[0].split('-')[1]+'/'+data.transactionDate.split('T')[0].split('-')[2]}</td>
                                 <td className='expenseField'>{data.expense}</td>
-                                <td className='expenseField'>{data.transactionDescription}</td>
+                                <td className='expenseFieldDesc'>{data.transactionDescription}</td>
                             </tr>)}
                             
                             </tbody>
