@@ -68,7 +68,7 @@ class ReportingTool extends Component<{},transactionData>{
         }).then(()=>{
             this.getMonthlyTransactions().then(()=>{
                 this.render()
-                this.setState({isReportGen:true})
+                
             })
         })
         
@@ -77,9 +77,11 @@ class ReportingTool extends Component<{},transactionData>{
 
     async componentDidMount() {
 
-        await this.validateToken()
+        //await this.validateToken()
 
-        await this.getBudgetReport()
+        //await this.getBudgetReport()
+
+        this.setState({isReportGen:true})
 
     }
 

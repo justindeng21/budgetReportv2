@@ -60,7 +60,7 @@ export default class ImportForm extends Component<{},ImportState>{
                     body: JSON.stringify({data:payload})
     
                 }).then(()=>{
-                    
+                    window.location.reload()
                 })
             };
             
@@ -74,7 +74,7 @@ export default class ImportForm extends Component<{},ImportState>{
         return(
             <form onSubmit={(event) => event.preventDefault()} className='form'>
                 <h5 className='postCallHeading'>Import Expenses</h5>
-                <input type={"file"} accept={".csv"} onChange={this.handleFileChange}/>
+                <input  className="submitFile" type={"file"} accept={".csv"} onChange={this.handleFileChange}/>
                 <button type='submit' className="submit" onClick={this.handleSubmit}>Submit</button>
             </form>
         )
