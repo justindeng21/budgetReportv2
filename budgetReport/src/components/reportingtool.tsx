@@ -75,6 +75,15 @@ class ReportingTool extends Component<{},transactionData>{
         
     }
 
+    logout(){
+        var response = fetch(domain + '/endSession',{
+            method: 'GET',
+            credentials: 'include'
+        }).then(() => {
+            console.log('log off sucessful')
+        });
+    }
+
     async componentDidMount() {
 
         await this.validateToken()
@@ -153,30 +162,33 @@ class ReportingTool extends Component<{},transactionData>{
                 </div>
 
                 <div style={{ width: "30vw", 
-                  height: "30vh",
-                  backgroundColor: "#005F6B" ,borderRadius:"10px",margin:"10vh 10vh auto"}}>
+                    height: "30vh",
+                    backgroundColor: "#005F6B" ,borderRadius:"10px",margin:"10vh 10vh auto"}}>
 
-                <ResponsiveContainer width="100%" 
-                                    height="100%">
-                    <LineChart
-                    width={500}
-                    height={300}
+                    <ResponsiveContainer width="100%" 
+                                        height="100%">
+                        <LineChart
+                        width={500}
+                        height={300}
+                        
+                        data={transactions.data}
+                        margin={{
+                            top: 40,
+                            right: 40,
+                            left: 40,
+                            bottom: 40,
+                        }}
+                        >
+                        <CartesianGrid />
+                        <YAxis tick={{ fill: 'white' }}/>
+                        <Line type="monotone" dataKey="expense" stroke="white"  strokeWidth={3} />
                     
-                    data={transactions.data}
-                    margin={{
-                        top: 40,
-                        right: 40,
-                        left: 40,
-                        bottom: 40,
-                    }}
-                    >
-                    <CartesianGrid />
-                    <YAxis tick={{ fill: 'white' }}/>
-                    <Line type="monotone" dataKey="expense" stroke="white"  strokeWidth={3} />
-                   
-                    </LineChart>
-                </ResponsiveContainer>
+                        </LineChart>
+                    </ResponsiveContainer>
                 </div>
+
+
+                <button onClick={this.logout}>Log Out</button>
 
 
             </div>
