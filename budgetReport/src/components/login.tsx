@@ -66,7 +66,7 @@ export default class LoginPage extends Component{
     render(): ReactNode {
         return( 
             <div className="App">
-                <h1>Budget Tool</h1>
+                <h1>Hi Vivek Anand, please give me access to my Heroku account</h1>
             <div className="loginContainer">
                     Login
                     
