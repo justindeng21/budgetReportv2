@@ -13,7 +13,7 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'budgetReport', 'build', 'index.html'));
 });
 
-app.get('/reportingTool', () => {
+app.get('/reportingTool/', () => {
     res.sendFile(path.resolve(__dirname, 'budgetReport', 'build', 'index.html'));
 })
 

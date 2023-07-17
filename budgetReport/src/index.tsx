@@ -14,7 +14,7 @@ const domain = 'https://budgetreportapi.herokuapp.com'
 function Controller() {
     var path = window.location.pathname
 
-    if(path == '/reportingtool'){
+    if(path == '/reportingtool/'){
         return(
             <ReportingToolPage></ReportingToolPage>
         )
