@@ -17,7 +17,7 @@ app.get('/reportingTool/', () => {
     res.sendFile(path.resolve(__dirname, 'budgetReport', 'build', 'index.html'));
 })
 
-app.get('/reportingTool/#', () => {
+app.get('#', () => {
     res.sendFile(path.resolve(__dirname, 'budgetReport', 'build', 'index.html'));
 })
 
