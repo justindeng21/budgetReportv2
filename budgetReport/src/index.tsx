@@ -19,6 +19,11 @@ function Controller() {
             <ReportingToolPage></ReportingToolPage>
         )
     }
+    if(path == '/reportingtool/#'){
+        return(
+            <LoginPage></LoginPage>
+        )
+    }
 
     else{
         return(
