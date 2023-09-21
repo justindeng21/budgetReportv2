@@ -90,16 +90,21 @@ function Controller() {
                 vendors: {}
             };
 
-            for (var category in categories) {
-                if (!categories[category as keyof typeof categories]) continue;
-                var handler = window.evidon[handlers.categories[category as keyof typeof categories] ];
-                if (typeof handler === 'function') handler();
-            }
-            for (var vendor in vendors) {
-                if (!vendors[vendor as keyof typeof vendors]) continue;
-                var handler = window.evidon[handlers.vendors[vendor as keyof typeof vendors]];
-                if (typeof handler === 'function') handler();
-            }
+
+
+            for (var category in categories) { 
+                if (!categories[category as keyof typeof categories]) continue; 
+                if (category === 'all') { 
+                    for (var callback in handlers.categories) { 
+                        var handler = window.evidon[handlers.categories[callback as keyof typeof categories]]; 
+                        if (typeof handler === 'function') handler(); 
+                    } 
+                } 
+                else { 
+                    var handler = window.evidon[handlers.categories[category as keyof typeof categories]]; 
+                    if (typeof handler === 'function') handler(); 
+                } 
+            }  
             
         }
     
@@ -119,8 +124,12 @@ function Controller() {
         }
 
         window.evidon.handleAnalytics = function(){
-            console.log('I FUCKING DID IT')
+            console.log('why did i agree to do this??')
         }
+
+        setTimeout(()=>{
+            window.evidon.notice.setDomain("dg-ucp.herokuapp.com")
+        },2000)
 
     })(3714);
 
