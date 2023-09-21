@@ -126,11 +126,6 @@ function Controller() {
         window.evidon.handleAnalytics = function(){
             console.log('why did i agree to do this??')
         }
-
-        setTimeout(()=>{
-            window.evidon.notice.setDomain("dg-ucp.herokuapp.com")
-        },2000)
-
     })(3714);
 
 
