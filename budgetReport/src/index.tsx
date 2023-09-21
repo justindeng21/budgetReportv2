@@ -123,7 +123,7 @@ function Controller() {
             // using a Decline button
         }
 
-        window.evidon.handleAnalytics = function(){
+        window.evidon.handleAnalytics = function(categories:object, vendors:object, cookies:object){
             var axel = Math.random();
             var a = axel * 10000000000000;
             document.write('<iframe src="https://8261222.fls.doubleclick.net/activityi;src=8261222;type=spark0;cat=dgn-b000;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
