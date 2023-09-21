@@ -124,7 +124,9 @@ function Controller() {
         }
 
         window.evidon.handleAnalytics = function(){
-            console.log('why did i agree to do this??')
+            var axel = Math.random();
+            var a = axel * 10000000000000;
+            document.write('<iframe src="https://8261222.fls.doubleclick.net/activityi;src=8261222;type=spark0;cat=dgn-b000;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
         }
     })(3714);
 
