@@ -1,8 +1,8 @@
 import './components/styles.css'
 import ReportingToolPage  from './components/reportingtool';
 import LoginPage from './components/login'
-// UNINSTALL import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { Component, HTMLAttributes, HtmlHTMLAttributes } from 'react';
+
+import React from 'react';
 
 
 import ReactDOM from 'react-dom/client';
@@ -81,6 +81,25 @@ function Controller() {
             // add the tags which need to wait for prior consent
             // here.  This should be all your advertising tags and
             // probably most of your social and tracking tags.
+            var handlers = {
+                categories: {
+                    'advertising': 'handleAdvertising',
+                    'analytics': 'handleAnalytics',
+                    'functional': 'handleFunctional',
+                },
+                vendors: {}
+            };
+
+            for (var category in categories) {
+                if (!categories[category as keyof typeof categories]) continue;
+                var handler = window.evidon[handlers.categories[category as keyof typeof categories] ];
+                if (typeof handler === 'function') handler();
+            }
+            for (var vendor in vendors) {
+                if (!vendors[vendor as keyof typeof vendors]) continue;
+                var handler = window.evidon[handlers.vendors[vendor as keyof typeof vendors]];
+                if (typeof handler === 'function') handler();
+            }
             
         }
     
@@ -98,16 +117,21 @@ function Controller() {
             // this is executed if the user explicitly declines giving consent by
             // using a Decline button
         }
+
+        window.evidon.handleAnalytics = function(){
+            console.log('I FUCKING DID IT')
+        }
+
     })(3714);
 
 
 
-    if(path == '/reportingtool/'){
+    if(path === '/reportingtool/'){
         return(
             <ReportingToolPage></ReportingToolPage>
         )
     }
-    if(path == '/reportingtool/#'){
+    if(path === '/reportingtool/#'){
         return(
             <LoginPage></LoginPage>
         )
