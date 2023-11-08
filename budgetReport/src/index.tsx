@@ -29,7 +29,6 @@ function Controller() {
 
     (function (id:number) : void {
 
-        console.log('LOLOL somehow this worked?')
         function append(scriptid:string, url:string, async:boolean) : void {
             var d = document, sn = 'script', f = d.getElementsByTagName(sn)[0];
             if (!f) f = d.head;
@@ -78,55 +77,19 @@ function Controller() {
         if (rootDomain) append('evidon-settings', noticecdn + id + '/' + rootDomain + (window.evidon.test ? '/test' : '') + '/settingsV2.js', true);
     
         window.evidon.priorConsentCallback = function (categories:object, vendors:object, cookies:object) {
-            // add the tags which need to wait for prior consent
-            // here.  This should be all your advertising tags and
-            // probably most of your social and tracking tags.
-            var handlers = {
-                categories: {
-                    'advertising': 'handleAdvertising',
-                    'analytics': 'handleAnalytics',
-                    'functional': 'handleFunctional',
-                },
-                vendors: {}
-            };
-
-
-
-            for (var category in categories) { 
-                if (!categories[category as keyof typeof categories]) continue; 
-                if (category === 'all') { 
-                    for (var callback in handlers.categories) { 
-                        var handler = window.evidon[handlers.categories[callback as keyof typeof categories]]; 
-                        if (typeof handler === 'function') handler(); 
-                    } 
-                } 
-                else { 
-                    var handler = window.evidon[handlers.categories[category as keyof typeof categories]]; 
-                    if (typeof handler === 'function') handler(); 
-                } 
-            }  
             
         }
     
         window.evidon.closeCallback = function () {
-            // this is executed if the user closed a UI element without either Accepting (providing consent)
-            // or Declining (declining to provide consent).
+
         }
     
         window.evidon.consentWithdrawnCallback = function () {
-            // this is exeucted if the user withdraws consent and elects to
-            // no longer allow technologies to run on the site.
+
         }
     
         window.evidon.consentDeclinedCallback = function () {
-            // this is executed if the user explicitly declines giving consent by
-            // using a Decline button
-        }
 
-        window.evidon.handleAnalytics = function(categories:object, vendors:object, cookies:object){
-            var axel = Math.random();
-            var a = axel * 10000000000000;
-            document.write('<iframe src="https://8261222.fls.doubleclick.net/activityi;src=8261222;type=spark0;cat=dgn-b000;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
         }
     })(3714);
 
